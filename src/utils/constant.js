@@ -6,3 +6,9 @@ export const YOUTUBE_LOGO =
 
 export const USER_LOGO =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9E3EoS1LZ8uL_1FDNukh3hep_hUi2aHhquQ&usqp=CAU";
+
+const YOUTUBE_API_KEY = "AIzaSyDp1fprS0Iw35uCWGrd22nc-Plox8bgosI";
+
+export const YOUTUBE_VIDEO_API =
+  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&key=" +
+  YOUTUBE_API_KEY;
