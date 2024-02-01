@@ -1,7 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import React, { useEffect, useState } from "react";
 import { YOUTUBE_VIDEO_API } from "../utils/constant";
 import VideoCard from "./VideoCard";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);
