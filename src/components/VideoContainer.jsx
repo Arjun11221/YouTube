@@ -7,10 +7,18 @@ import { Link } from "react-router-dom";
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);
-  
+  const [loader, setLoader] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoader(false);
+    }, 1500);
+  }, []);
+
   useEffect(() => {
     getVideos();
   }, []);
+
   const getVideos = async () => {
     const data = await fetch(YOUTUBE_VIDEO_API);
     const json = await data.json();
@@ -19,11 +27,19 @@ const VideoContainer = () => {
   };
   return (
     <div className="flex flex-wrap ">
-      {videos.map((video) => (
-        <Link key={video?.id}  to={"/watch?v=" + video.id}>
-          <VideoCard info={video} />
-        </Link>
-      ))}
+      {loader ? (
+        <div className="flex items-center justify-center h-screen w-full">
+          <div className="loader"></div>
+        </div>
+      ) : (
+        <>
+          {videos.map((video) => (
+            <Link key={video?.id} to={"/watch?v=" + video.id}>
+              <VideoCard info={video} />
+            </Link>
+          ))}
+        </>
+      )}
     </div>
   );
 };

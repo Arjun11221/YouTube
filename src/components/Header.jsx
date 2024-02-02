@@ -15,8 +15,10 @@ const Header = () => {
   const [suggestion, setSuggestion] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const searchCache = useSelector((store) => store.search);
-  
+
   const dispatch = useDispatch();
+
+  
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -36,9 +38,11 @@ const Header = () => {
     const data = await fetch(YOUTUBE_SEARCH_API + search);
     const json = await data.json();
     setSuggestion(json[1]);
-    dispatch(cacheResult({
-      [search] : json[1],
-    }))
+    dispatch(
+      cacheResult({
+        [search]: json[1],
+      })
+    );
   };
 
   const handleChange = () => {
@@ -46,7 +50,7 @@ const Header = () => {
   };
 
   return (
-    <div className="grid grid-flow-col p-4 m-2 shadow-lg">
+    <div className="grid grid-flow-col py-6 px-4 shadow-lg">
       <div className="flex col-span-2 mx-4 ">
         <img
           className="h-12 cursor-pointer"
@@ -63,7 +67,7 @@ const Header = () => {
 
       <div className="col-span-10  ">
         <input
-          className=" w-1/2 py-2 px-4 outline-none border border-gray-500 rounded-l-full "
+          className=" w-1/2 py-2 px-4 dark:bg-black dark:text-gray-100 outline-none border border-gray-500 rounded-l-full "
           type="text"
           placeholder="Search"
           value={search}
@@ -71,11 +75,11 @@ const Header = () => {
           onFocus={() => setShowSuggestions(true)}
           onBlur={() => setShowSuggestions(false)}
         />
-        <button className=" p-2 outline-none bg-gray-100 border border-gray-500 rounded-r-full">
+        <button className=" p-2 dark:bg-black dark:text-white outline-none bg-gray-100 border border-gray-500 rounded-r-full">
           Search
         </button>
         {showSuggestions && (
-          <div className="fixed bg-white py-3 px-5 w-[30.8rem] rounded-xl border shadow-2xl">
+          <div className="fixed dark:bg-black dark:text-gray-100 bg-white py-3 px-5 w-[30.8rem] rounded-xl border shadow-2xl">
             <ul>
               {suggestion.map((s) => (
                 <li key={s} className="py-2 font-semibold ">
@@ -90,6 +94,7 @@ const Header = () => {
       <div className="col-span-1">
         <img className="h-12 " src={USER_LOGO} alt="user-logo" />
       </div>
+      
     </div>
   );
 };
