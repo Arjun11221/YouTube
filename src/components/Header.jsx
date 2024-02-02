@@ -51,7 +51,7 @@ const Header = () => {
 
   return (
     <div className="grid grid-flow-col py-6 px-4 shadow-lg">
-      <div className="flex col-span-2 mx-4 ">
+      <div className="flex col-span-1 mx-4 ">
         <img
           className="h-12 cursor-pointer"
           onClick={handleChange}
@@ -65,7 +65,7 @@ const Header = () => {
         />
       </div>
 
-      <div className="col-span-10  ">
+      <div className="col-span-8  ">
         <input
           className=" w-1/2 py-2 px-4 dark:bg-black dark:text-gray-100 outline-none border border-gray-500 rounded-l-full "
           type="text"
