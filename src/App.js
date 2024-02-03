@@ -40,7 +40,7 @@ function App() {
           <RouterProvider router={appRouter} />
         </div>
         <button
-          className="absolute w-20 h-12 top-7 right-44 bg-neutral-300 dark:bg-slate-800 rounded-lg text-black dark:text-white font-semibold"
+          className="absolute py-2 px-4 rounded-md md:w-20 md:right-24 right-4 top-10 md:h-12 md:top-7  bg-neutral-300 dark:bg-slate-800 md:rounded-lg text-black dark:text-white font-semibold"
           onClick={toggleChange}
         >
           {darkMode ? "Light" : "Dark"}

@@ -5,8 +5,8 @@ const SideBar = () => {
   const isMenuOpen = useSelector(store => store.app.isMenuOpen);
   if(!isMenuOpen) return null;
   return (
-    <div className='p-4 shadow-lg w-40 ' >
-      <ul className='m-2 font-semibold' >
+    <div className='md:p-4 p-2 shadow-lg md:w-40 w-24' >
+      <ul className='m-2 font-semibold ' >
         <li>Home</li>
         <li>Shorts</li>
         <li>Watch later</li>
@@ -14,7 +14,7 @@ const SideBar = () => {
         <li>Liked Videos</li>
       </ul>
 
-      <h1 className='font-bold pt-2' >Subscriptions</h1>
+      <h1 className='md:font-bold font-semibold pt-2' >Subscriptions</h1>
       <ul className='m-2 font-semibold'>
         <li>Music</li>
         <li>Sport</li>

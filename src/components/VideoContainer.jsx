@@ -26,7 +26,7 @@ const VideoContainer = () => {
     setVideos(json.items);
   };
   return (
-    <div className="flex flex-wrap ">
+    <div className="md:flex md:flex-wrap md:flex-row ">
       {loader ? (
         <div className="flex items-center justify-center h-screen w-full">
           <div className="loader"></div>
